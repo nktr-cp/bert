@@ -13,3 +13,4 @@ uv sync --dev
 - uv-based project scaffold
 - package entrypoint
 - CI for lint, format, and CLI smoke test
+- WordPiece tokenizer with BERT special tokens
