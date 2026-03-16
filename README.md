@@ -21,3 +21,4 @@ uv sync --dev
 - encoder feed-forward, residual connections, and LayerNorm
 - BERT backbone with stacked encoder blocks and pooled `[CLS]` output
 - masked language modeling corruption and MLM prediction head
+- sequence classification head for emotion analysis
