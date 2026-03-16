@@ -22,3 +22,4 @@ uv sync --dev
 - BERT backbone with stacked encoder blocks and pooled `[CLS]` output
 - masked language modeling corruption and MLM prediction head
 - sequence classification head for emotion analysis
+- sequence-classification training, evaluation, and checkpointing
