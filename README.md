@@ -18,3 +18,4 @@ uv sync --dev
 - BERT embedding stack with token, position, and token type embeddings
 - single-head bidirectional self-attention with padding-mask support
 - multi-head bidirectional self-attention with output projection
+- encoder feed-forward, residual connections, and LayerNorm
