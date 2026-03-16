@@ -15,3 +15,4 @@ uv sync --dev
 - CI for lint, format, and CLI smoke test
 - WordPiece tokenizer with BERT special tokens
 - batch collation for padding, attention masks, and token type ids
+- BERT embedding stack with token, position, and token type embeddings
