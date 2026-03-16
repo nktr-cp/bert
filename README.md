@@ -16,3 +16,4 @@ uv sync --dev
 - WordPiece tokenizer with BERT special tokens
 - batch collation for padding, attention masks, and token type ids
 - BERT embedding stack with token, position, and token type embeddings
+- single-head bidirectional self-attention with padding-mask support
