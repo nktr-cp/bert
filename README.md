@@ -19,3 +19,4 @@ uv sync --dev
 - single-head bidirectional self-attention with padding-mask support
 - multi-head bidirectional self-attention with output projection
 - encoder feed-forward, residual connections, and LayerNorm
+- BERT backbone with stacked encoder blocks and pooled `[CLS]` output
