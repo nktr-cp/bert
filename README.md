@@ -23,3 +23,4 @@ uv sync --dev
 - masked language modeling corruption and MLM prediction head
 - sequence classification head for emotion analysis
 - sequence-classification training, evaluation, and checkpointing
+- inference CLI for sentence-level emotion prediction

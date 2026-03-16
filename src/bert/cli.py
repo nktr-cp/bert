@@ -9,6 +9,7 @@ from .checkpoint import (
     save_sequence_classification_checkpoint,
 )
 from .data import build_label_vocabulary, load_classification_examples, split_examples
+from .inference import predict_sequence_class
 from .tokenizer import WordPieceTokenizer
 from .training import (
     SequenceClassificationTrainingConfig,
@@ -61,6 +62,13 @@ def build_parser() -> ArgumentParser:
     evaluate_parser.add_argument("checkpoint", type=Path)
     evaluate_parser.add_argument("dataset", type=Path)
     evaluate_parser.add_argument("--batch-size", type=int, default=8)
+
+    predict_parser = subparsers.add_parser(
+        "predict-classifier",
+        help="Run sentence-level emotion prediction from a saved checkpoint.",
+    )
+    predict_parser.add_argument("checkpoint", type=Path)
+    predict_parser.add_argument("text")
     return parser
 
 
@@ -131,3 +139,15 @@ def main(argv: Sequence[str] | None = None) -> None:
             batch_size=args.batch_size,
         )
         print(f"accuracy={accuracy:.4f}")
+        return
+
+    if args.command == "predict-classifier":
+        model, tokenizer, _, labels = load_sequence_classification_checkpoint(args.checkpoint)
+        prediction, scores = predict_sequence_class(
+            model,
+            tokenizer,
+            args.text,
+            labels=labels,
+        )
+        print(f"prediction={prediction}")
+        print(f"scores={scores}")
